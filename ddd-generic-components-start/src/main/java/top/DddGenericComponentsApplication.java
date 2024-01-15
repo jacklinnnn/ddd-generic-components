@@ -1,8 +1,13 @@
-package top.austin;
+package top;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * 服务应用启动入口
+ *
+ * @author Linbizhao
+ */
 @SpringBootApplication
 public class DddGenericComponentsApplication {
 
