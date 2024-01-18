@@ -1,4 +1,4 @@
-package top.austin.utils;
+package top.austin.toolkits;
 
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;

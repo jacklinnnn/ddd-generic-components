@@ -1,4 +1,4 @@
-package top.austin.compoment;
+package top.austin.components;
 
 import io.reactivex.rxjava3.core.Single;
 import lombok.AllArgsConstructor;

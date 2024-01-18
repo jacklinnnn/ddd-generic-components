@@ -1,15 +1,15 @@
 package top.austin.config;
 
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.redisson.client.codec.StringCodec;
 import org.redisson.config.Config;
 import org.redisson.config.TransportMode;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import top.austin.compoment.RedisConfigProperties;
+import top.austin.components.RedisConfigProperties;
 
 /**
  * @Desc: Redisson配置
@@ -20,8 +20,24 @@ import top.austin.compoment.RedisConfigProperties;
 @Configuration
 public class RedissonConfig {
 
-    @Autowired
+    @Resource
     private RedisConfigProperties redisConfigProperties;
+
+    /**
+     * 单机配置
+     */
+    @Bean(destroyMethod = "shutdown")
+    public RedissonClient singleRedisson() {
+        log.info("【Redisson配置】：{}", redisConfigProperties);
+        Config config = new Config();
+        // 对象编码为纯字符串编码
+        config.setCodec(StringCodec.INSTANCE);
+        config.setTransportMode(TransportMode.NIO);
+        config.useSingleServer()
+                .setAddress(redisConfigProperties.getHost() + ":" + redisConfigProperties.getPort())
+                .setPassword(redisConfigProperties.getPassword());
+        return Redisson.create(config);
+    }
 
     ///**
     // * Redis集群
@@ -40,21 +56,6 @@ public class RedissonConfig {
     //    return Redisson.create(config);
     //}
 
-    /**
-     * 单机配置
-     */
-    @Bean(destroyMethod = "shutdown")
-    public RedissonClient singleRedisson() {
-        log.info("【Redisson配置】：{}", redisConfigProperties);
-        Config config = new Config();
-        // 对象编码为纯字符串编码
-        config.setCodec(StringCodec.INSTANCE);
-        config.setTransportMode(TransportMode.NIO);
-        config.useSingleServer()
-                .setAddress(redisConfigProperties.getHost() + ":" + redisConfigProperties.getPort())
-                .setPassword(redisConfigProperties.getPassword());
-        return Redisson.create(config);
-    }
 }
 
 

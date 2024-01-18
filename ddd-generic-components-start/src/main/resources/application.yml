@@ -4,7 +4,7 @@ spring:
       nodeAddresses: [
         "redis://127.0.0.1:6379"
       ]
-      password: "austinredis"
+      password: ""
     single:
       address: "redis://127.0.0.1:6379"
       database: 1
