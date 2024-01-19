@@ -9,12 +9,12 @@ import org.redisson.config.Config;
 import org.redisson.config.TransportMode;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import top.austin.components.RedisConfigProperties;
 
 /**
- * @Desc: Redisson配置
- * @Author: Linbizhao
- * @Since: 2024/1/15 20:56
+ * Redisson配置
+ *
+ * @author: Linbizhao
+ * @since: 2024/1/15 20:56
  */
 @Slf4j
 @Configuration

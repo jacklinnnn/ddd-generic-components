@@ -8,9 +8,10 @@ import top.austin.constant.enums.ResponseEnum;
 import java.sql.Timestamp;
 
 /**
- * @author Linbizhao
- * @description: 接口返回统一格式
- * @since 2023/12/29 13:15
+ * 统一接口返回格式
+ *
+ * @author: Linbizhao
+ * @since: 2024/1/19 0:54
  */
 @Getter
 @Setter

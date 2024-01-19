@@ -1,25 +1,25 @@
-package top.austin.components;
+package top.austin.config;
 
-import io.reactivex.rxjava3.core.Single;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import java.io.Serializable;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
- * @Desc: redis缓存配置
- * @Author: Linbizhao
- * @Since: 2024/1/15 21:16
+ * Redis缓存配置
+ *
+ * @author: Linbizhao
+ * @since: 2024/1/15 21:16
  */
 @Data
 @Component
-@ConfigurationProperties(prefix = "spring.redis")
-public class RedisConfigProperties implements Serializable {
+@ConfigurationProperties(prefix = RedisConfigProperties.PREFIX)
+public class RedisConfigProperties {
 
-    private static final long serialVersionUID = 8815222005846355408L;
+    public static final String PREFIX = "spring.redis";
 
     /**
      * 端口
@@ -50,6 +50,17 @@ public class RedisConfigProperties implements Serializable {
      * Redis单机
      */
     private Single single;
+
+
+    /**
+     * 默认超时时间，默认6个小时
+     */
+    private Long defaultValueTimeout = 21600L;
+
+    /**
+     * 时间单位: 秒
+     */
+    private TimeUnit valueTimeUnit = TimeUnit.SECONDS;
 
     @Data
     @AllArgsConstructor

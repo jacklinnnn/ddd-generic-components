@@ -3,9 +3,10 @@ package top.austin.exception;
 import lombok.Data;
 
 /**
- * @author Linbizhao
- * @description: 消息异常
- * @since 2023/11/23 10:29
+ * 消息异常
+ *
+ * @author: Linbizhao
+ * @since: 2024/1/19 0:54
  */
 @Data
 public class MessageException extends RuntimeException {

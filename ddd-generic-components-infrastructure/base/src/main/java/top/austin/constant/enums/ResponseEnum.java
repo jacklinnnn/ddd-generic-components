@@ -1,8 +1,10 @@
 package top.austin.constant.enums;
 
 /**
- * @author Linbizhao 2023/11/17 18:17
- * @description: 响应结果枚举
+ * 响应结果枚举
+ *
+ * @author: Linbizhao
+ * @since: 2024/1/19 0:54
  */
 public enum ResponseEnum {
 

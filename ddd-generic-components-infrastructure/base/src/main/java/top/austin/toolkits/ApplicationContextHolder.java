@@ -9,8 +9,15 @@ import java.util.Map;
 
 /**
  * @Desc: Application context holder.
- * @Author: Linbizhao
- * @Since: 2024/1/18 23:55
+ * @author: Linbizhao
+ * @since: 2024/1/18 23:55
+ */
+
+/**
+ * Application Context Holder
+ *
+ * @author: Linbizhao
+ * @since: 2024/1/19 0:54
  */
 public class ApplicationContextHolder implements ApplicationContextAware {
 

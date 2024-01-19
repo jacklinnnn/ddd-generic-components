@@ -7,9 +7,10 @@ import top.austin.constant.enums.ResponseEnum;
 import java.io.Serializable;
 
 /**
- * @author Linbizhao
- * @description: 自定义业务异常
- * @since 2023/12/29 13:09
+ * 自定义业务异常
+ *
+ * @author: Linbizhao
+ * @since: 2024/1/19 0:54
  */
 @Getter
 @Setter
